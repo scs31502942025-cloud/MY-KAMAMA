@@ -1,40 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
-      rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <title>TO MY KAMAMA?</title>
-</head>
-<body>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
 
-<div class="question-container container">
-<video class="local-gif" src="Reply me love.mp4" autoplay muted loop></video>
-  <h2 class="question">please forgive me KAMAMA🥺</h2>
-  <div class="button-container">
-    <button class="yes-btn btn js-yes-btn">Yes</button>
-    <button class="no-btn btn js-no-btn">No</button>
-  </div>
-</div>
-<div class="result-container container">
-  <video class="gif-result" src="Love me.mp4" autoplay loop></video>
-  <h2>HURAAAAAAAAAAAAAAAAAAAY NDO MAANA NAKUPENDA😁😁😁<br>NOW SPEAK TO ME PLEAAAASE😫</h2>
-</div>
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
 
-<div class="cssload-main">
-  <div class="cssload-heart">
-    <span class="cssload-heartL"></span>
-    <span class="cssload-heartR"></span>
-    <span class="cssload-square"></span>
-  </div>
-  <div class="cssload-shadow"></div>
-</div>
-<script src="script.js"></script>
+/* General container */
+.container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
 
-</body>
-</html>
+/* Hide result initially (assuming JS controls it) */
+.result-container {
+  display: none;
+}
+
+/* Video styling */
+video {
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* Text */
+h2 {
+  font-size: clamp(18px, 4vw, 28px);
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+/* Buttons */
+.button-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 28px;
+  font-size: clamp(14px, 3vw, 18px);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.yes-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.no-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Loader centered properly */
+.cssload-main {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Make sure nothing overflows on small phones */
+@media (max-height: 600px) {
+  video {
+    max-height: 40vh;
+  }
+}

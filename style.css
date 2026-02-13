@@ -91,9 +91,10 @@ body {
   margin-bottom: 2rem;
 }
 .result-container h2 {
-  font-size: 2.2rem; /* keep original size */
+  font-size: 2.0rem; /* keep original size */
   word-wrap: break-word;
-  line-height: 0.8em;
+  line-height: 1.0em;
+  margin-left:10px;
 }
 
 /* heart loader */
@@ -417,5 +418,6 @@ body {
     border-color: rgb(228, 228, 228);
   }
 }
+
 
 
